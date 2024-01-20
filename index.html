@@ -4,18 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crop Recommendation System</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header {
+            background-color: #1d232a;
+            color: #fff;
+            padding: 10px;
+        }
+
+        footer {
+            background-color: #1d232a;
+            color: #fff;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .card {
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1d232a;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        a:hover {
+            background-color: #9aa9b9;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-    <script>
-        // Fetch the content of the actual index.html and inject it into the body
-        fetch('/templates/index.html')
-            .then(response => response.text())
-            .then(html => {
-                document.body.innerHTML = html;
-            })
-            .catch(error => {
-                console.error('Error fetching index.html:', error);
-            });
-    </script>
+    <header>
+        <h1>Crop Recommendation System</h1>
+    </header>
+
+    <div class="card" onclick="window.location.href='C:\Users\JATIN\OneDrive\Desktop\Crop-Recommendation-Project\templates\index.html'">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZqpUiwZYYzcxRYq8yiO9CHZKZLZ31MCOkkRQpnBHpY_DHESt0uXuUoRY8xKx_G2cN7e0&usqp=CAU" alt="Project Image">
+        <h2>Project Name</h2>
+        <p>Details about the project go here. Briefly describe what the project is about.</p>
+        <a href="C:\Users\JATIN\OneDrive\Desktop\Crop-Recommendation-Project\templates\index.html">Go to Project</a>
+    </div>
+
+    <footer>
+        <p>We are currently working on updates. Stay tuned!</p>
+        <p>Till then, click the card above to access the project.</p>
+    </footer>
 </body>
 </html>
