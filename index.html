@@ -4,123 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crop Recommendation System</title>
-    <style>
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        h1 {
-            animation: fadeIn 1s ease-in-out;
-            font-family: cursive;
-            font-size: 36px;
-            color: #090909;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        }
-        
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #ffffff;
-            background-image: url("https://img.freepik.com/free-vector/white-background-with-blue-tech-hexagon_1017-19366.jpg");
-            color: #333;
-            margin: 0;
-            padding: 20px;
-            text-align: center;
-        }
-
-        form {
-            max-width: 700px;
-            margin: 0 auto;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: #d4d4d4;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        }
-
-        input {
-            width: calc(100% - 16px);
-            padding: 8px;
-            margin-bottom: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        input[type="text"] {
-            background-color: #eee;
-            color: #333;
-        }
-
-        input[type="submit"] {
-            background-color: #1d232a;
-            color: #fff;
-            cursor: pointer;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #9aa9b9;
-        }
-
-        p {
-            margin-top: 20px;
-            color: #000;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            margin-top: 20px;
-            max-height: 500px;
-        }
-    </style>
 </head>
 <body>
-    <!-- Include the content from the templates/index.html -->
-    <h1>Crop Recommendation System</h1>
-
-    <!-- Form for user input -->
-    <form action="/predict" method="post">
-        <label for="n">Enter value of N in Integers:</label>
-        <input type="text" name="n" required>
-
-        <label for="p">Enter value of P in Integers:</label>
-        <input type="text" name="p" required>
-
-        <label for="k">Enter value of K in Integers:</label>
-        <input type="text" name="k" required>
-
-        <label for="temp">Enter value of Temperature(deg Celcius) in float:</label>
-        <input type="text" name="temp" required>
-
-        <label for="humidity">Enter value of humidity in float:</label>
-        <input type="text" name="humidity" required>
-
-        <label for="ph">Enter value of ph in float:</label>
-        <input type="text" name="ph" required>
-
-        <label for="rainfall">Enter value of rainfall in float:</label>
-        <input type="text" name="rainfall" required>
-
-        <input type="submit" value="PREDICT" style="font-family:monospace;">
-    </form>
-
-    {% if prediction %}
-        <h1><strong>Prediction:</strong> {{ prediction }}</h1>
-        <h2><strong>Fertilizer Recommendation:</strong> {{ fertilizer }}</h2>
-        <img src="{{ url_for('static', filename='crop_images/' + crop_image) }}" alt="{{ prediction }}">
-    {% endif %}
+    <script>
+        // Fetch the content of the actual index.html and inject it into the body
+        fetch('/templates/index.html')
+            .then(response => response.text())
+            .then(html => {
+                document.body.innerHTML = html;
+            })
+            .catch(error => {
+                console.error('Error fetching index.html:', error);
+            });
+    </script>
 </body>
 </html>
